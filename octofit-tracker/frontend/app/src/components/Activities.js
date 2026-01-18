@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
-  const endpoint = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api/activities/`;
+  // Use hardcoded Codespaces endpoint for Copilot exercise
+  const endpoint = `https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/activities/`;
 
   useEffect(() => {
     fetch(endpoint)

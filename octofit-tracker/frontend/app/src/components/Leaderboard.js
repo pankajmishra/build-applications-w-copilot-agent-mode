@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const Leaderboard = () => {
   const [leaders, setLeaders] = useState([]);
-  const endpoint = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api/leaderboards/`;
+  // Use hardcoded Codespaces endpoint for Copilot exercise
+  const endpoint = `https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/leaderboard/`;
 
 
   useEffect(() => {

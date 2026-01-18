@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const apiBase = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api/users/`;
-  const endpoint = `${apiBase}`;
+  // Use hardcoded Codespaces endpoint for Copilot exercise
+  const endpoint = `https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/users/`;
 
   useEffect(() => {
     fetch(endpoint)

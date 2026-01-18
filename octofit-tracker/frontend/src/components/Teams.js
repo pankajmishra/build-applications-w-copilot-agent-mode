@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react';
 const Teams = () => {
   const [teams, setTeams] = useState([]);
   // Use hardcoded Codespaces endpoint for Copilot exercise
-  const endpoint = `https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/teams/`;
-
+  const codespaceName = process.env.REACT_APP_CODESPACE_NAME;
+  const endpoint = codespaceName ? `https://${codespaceName}-8000.app.github.dev/api/teams/` : 'http://localhost:8000/api/teams/';
+  
   useEffect(() => {
     fetch(endpoint)
       .then(res => res.json())

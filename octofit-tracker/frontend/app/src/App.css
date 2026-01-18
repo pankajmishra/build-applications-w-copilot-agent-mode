@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  color: #222b45;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.octofit-navbar {
+  background: linear-gradient(90deg, #1e90ff 0%, #6dd5fa 100%);
+  box-shadow: 0 2px 8px rgba(30,144,255,0.08);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.octofit-logo {
+  height: 40px;
+  width: 120px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.octofit-brand {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+  color: #e0eafc !important;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: color 0.2s;
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #1e90ff;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.octofit-main-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(30,144,255,0.07);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+ul, ol {
+  color: #222b45;
+  font-size: 1.1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f7fbff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+th, td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0eafc;
+}
+th {
+  background: #1e90ff;
+  color: #fff;
+  font-weight: 600;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+
+button, .btn {
+  background: linear-gradient(90deg, #1e90ff 0%, #6dd5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(30,144,255,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+button:hover, .btn:hover {
+  background: linear-gradient(90deg, #6dd5fa 0%, #1e90ff 100%);
+  color: #fff;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #6dd5fa;
+  text-decoration: underline;
 }

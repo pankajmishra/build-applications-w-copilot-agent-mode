@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 const Activities = () => {
@@ -11,20 +12,39 @@ const Activities = () => {
       .then(data => {
         const results = data.results || data;
         setActivities(results);
-        console.log('Activities API endpoint:', endpoint);
-        console.log('Fetched activities:', results);
       })
       .catch(err => console.error('Error fetching activities:', err));
   }, [endpoint]);
 
   return (
-    <div>
-      <h2>Activities</h2>
-      <ul>
-        {activities.map((activity, idx) => (
-          <li key={activity.id || idx}>{activity.name || JSON.stringify(activity)}</li>
-        ))}
-      </ul>
+    <div className="card shadow-sm mb-4">
+      <div className="card-body">
+        <h2 className="card-title display-6 mb-4 text-primary">Activities</h2>
+        <div className="table-responsive">
+          <table className="table table-striped table-hover align-middle">
+            <thead className="table-primary">
+              <tr>
+                <th>#</th>
+                <th>User</th>
+                <th>Type</th>
+                <th>Duration (min)</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {activities.map((activity, idx) => (
+                <tr key={activity.id || idx}>
+                  <td>{idx + 1}</td>
+                  <td>{activity.user?.username || activity.user?.email || '-'}</td>
+                  <td>{activity.activity_type}</td>
+                  <td>{activity.duration}</td>
+                  <td>{activity.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };

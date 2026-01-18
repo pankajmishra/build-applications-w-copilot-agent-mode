@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 const Workouts = () => {
   const [workouts, setWorkouts] = useState([]);
-  const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`;
+  // Use REACT_APP_API_BASE_URL or fallback to localhost
+  const apiBase = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api`;
+  const endpoint = `${apiBase}/workouts/`;
 
   useEffect(() => {
     fetch(endpoint)

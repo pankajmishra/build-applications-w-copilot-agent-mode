@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const Teams = () => {
   const [teams, setTeams] = useState([]);
-  const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/teams/`;
+  const apiBase = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api`;
+  const endpoint = `${apiBase}/teams/`;
 
   useEffect(() => {
     fetch(endpoint)

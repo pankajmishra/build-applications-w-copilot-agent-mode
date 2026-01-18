@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
-  const apiBase = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api`;
-  const endpoint = `${apiBase}/activities/`;
+  const endpoint = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api/activities/`;
 
   useEffect(() => {
     fetch(endpoint)

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const apiBase = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api`;
-  const endpoint = `${apiBase}/users/`;
+  const apiBase = process.env.REACT_APP_API_BASE_URL || `http://localhost:8000/api/users/`;
+  const endpoint = `${apiBase}`;
 
   useEffect(() => {
     fetch(endpoint)
